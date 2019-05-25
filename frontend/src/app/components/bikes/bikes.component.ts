@@ -13,7 +13,7 @@ declare var M: any
 @Component({
   selector: 'app-bikes',
   templateUrl: './bikes.component.html',
-  styleUrls: ['./bikes.component.css'],
+  styleUrls: ['./bikes.component.scss'],
   //template: 'The href is: {{href}} The idurl is: {{_idurl}}'
 })export class BikesComponent implements OnInit {
   public href: string = "";

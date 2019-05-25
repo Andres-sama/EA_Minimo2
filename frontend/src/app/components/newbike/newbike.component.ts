@@ -8,7 +8,7 @@ import {Bikes} from "../../models/bikes";
 @Component({
   selector: 'app-newbike',
   templateUrl: './newbike.component.html',
-  styleUrls: ['./newbike.component.css']
+  styleUrls: ['./newbike.component.scss']
 })
 export class NewbikeComponent implements OnInit {
 

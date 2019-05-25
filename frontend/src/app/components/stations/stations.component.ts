@@ -10,7 +10,7 @@ import {Bikes} from "../../models/bikes";
 @Component({
   selector: 'app-stations',
   templateUrl: './stations.component.html',
-  styleUrls: ['./stations.component.css']
+  styleUrls: ['./stations.component.scss']
 })
 export class StationsComponent implements OnInit {
 

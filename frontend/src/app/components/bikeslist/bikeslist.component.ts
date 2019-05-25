@@ -12,7 +12,7 @@ declare var M: any
 @Component({
   selector: 'app-bikes',
   templateUrl: './bikeslist.component.html',
-  styleUrls: ['./bikeslist.component.css'],
+  styleUrls: ['./bikeslist.component.scss'],
   //template: 'The href is: {{href}} The idurl is: {{_idurl}}'
 })export class BikeslistComponent implements OnInit {
   bikes: Bikes[];

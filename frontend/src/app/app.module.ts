@@ -15,6 +15,9 @@ import { DeletebikeComponent } from './components/deletebike/deletebike.componen
 import { BikesComponent } from './components/bikes/bikes.component';
 import { BikeslistComponent } from './components/bikeslist/bikeslist.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -30,6 +33,9 @@ import { BikeslistComponent } from './components/bikeslist/bikeslist.component';
   imports: [
     BrowserModule, 
     IonicModule.forRoot(), 
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule],
   providers: [
     StatusBar,

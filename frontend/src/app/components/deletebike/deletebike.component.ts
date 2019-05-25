@@ -11,7 +11,7 @@ import { Bikes } from '../../models/bikes';
 @Component({
   selector: 'app-deletebike',
   templateUrl: './deletebike.component.html',
-  styleUrls: ['./deletebike.component.css']
+  styleUrls: ['./deletebike.component.scss']
 })
 export class DeletebikeComponent implements OnInit { 
   
