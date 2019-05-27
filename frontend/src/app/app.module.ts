@@ -17,6 +17,7 @@ import { BikeslistComponent } from './components/bikeslist/bikeslist.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddbikeComponent } from './components/addbike/addbike.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NewbikeComponent,
     BikesComponent,
     DeletebikeComponent,
+    AddbikeComponent,
     BikeslistComponent  
   ],
   entryComponents: [],

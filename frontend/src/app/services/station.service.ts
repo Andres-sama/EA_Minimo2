@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Stations } from "../models/stations";
 import { Environments } from "./environments"
 import { Observable } from "rxjs";
@@ -25,8 +25,10 @@ export class StationService {
   deleteStation(_id: string) {
     return this.http.delete(this.environment.urlStation + "/eliminar" + `/${_id}`);
   }
+
   deleteBike(stationId: string, bikeId: string) {
-    return this.http.delete(this.environment.urlRelation +"/delete"+ `/${stationId}` + `/${bikeId}`);  
+    return this.http.delete(this.environment.urlRelation +"/delete"+ `/${stationId}`+ `/${bikeId}`);  
+
   }
   getBikesdeStation(_id: string) :Observable<Stations> {
     return this.http.get<Stations>(this.environment.urlStation +"/here" + `/${_id}`);
@@ -34,6 +36,6 @@ export class StationService {
 
   //ADD BIKE
   addBike(stationId: string, bikeId: string) {
-    return this.http.post(this.environment.urlRelation + "/add" + `/${stationId}` + `/${bikeId}`, {stationId, bikeId});  
+    return this.http.put(this.environment.urlRelation + "/add" + `/${stationId}` + `/${bikeId}`, {stationId, bikeId});  
   }
 }

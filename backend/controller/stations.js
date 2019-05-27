@@ -42,14 +42,12 @@ function addBiketoStation(req, res) {
     let bikeId = req.params.bikeId
     console.log(req.params.bikeId)
 
-    Station.update({_id: stationId}, {"$push": {"bikes": bikeId}}, (err, result) => {
+    Stations.update({_id: stationId}, {"$push": {"bikes": bikeId}}, (err, result) => {
         console.log(result)
         if(err) res.status(500).send(`Error al actualizar la station: ${err}`)
         if(!result) return res.status(404).send('La station no esta en la bbdd')
-
         return res.status(200).send(result)
     })
-
 }
 
 //eliminar bike de station

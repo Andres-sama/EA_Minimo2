@@ -10,12 +10,13 @@ import {Bikes} from "../../models/bikes";
 import { NgIf } from '@angular/common';
 declare var M: any
 
+
 @Component({
-  selector: 'app-bikes',
-  templateUrl: './bikes.component.html',
-  styleUrls: ['./bikes.component.scss'],
-  //template: 'The href is: {{href}} The idurl is: {{_idurl}}'
-})export class BikesComponent implements OnInit {
+  selector: 'app-addbike',
+  templateUrl: './addbike.component.html',
+  styleUrls: ['./addbike.component.scss'],
+})
+export class AddbikeComponent implements OnInit {
   public href: string = "";
   public _idurl: string;
   station: Stations;
@@ -32,19 +33,19 @@ declare var M: any
     this.href = this.router.url;
     //console.log("url is:" + this.router.url);
     //sacamos el _id de la station
-    this._idurl = this.href.substr(27);
+    this._idurl = this.href.substr(14);
     //console.log("(27): "+ this.href.substr(27));
     //inciamos la función de listar por id
     //this.station._id = this._idurl;
-    this.getBikeId(this._idurl);
-    this.getBikesnot();
   }
 
-  getBikeId(_idurl) {
-    this.BikesService.getBike(_idurl).subscribe(res =>{
-        this.bikes = res;
+  addBike(_id: string){
+    if(confirm ('Are you sure you want to add it?')){
+      this.bikeID = _id;
+      this.StationService.addBike(this._idurl, this.bikeID).subscribe(res => {
+        M.toast({html: 'Added successfully'});
       });
-    console.log("lista de bikes de la station funciona"+this.bikes);
+    }
   }
   getBikesnot() {
     this.BikesService.getBikesnot()
@@ -52,22 +53,5 @@ declare var M: any
         this.bikes2 = res
         console.log("lista de bikes no asignadas funciona " + this.bikes2)
       });
-  }
-
-  addBike(_id: string){
-    if(confirm ('Are you sure you want to add it?')){
-      this.bikeID = _id;
-      this.StationService.addBike(this._idurl, this.bikeID).subscribe(res => {
-      });
-    }
-  }
-
-  deleteBike(_id: string){
-    if(confirm ('Are you sure you want to delete it?')) {
-      this.bikeID = _id;
-      this.StationService.deleteBike(this._idurl,this.bikeID).subscribe(res => {
-      })
-    }
-    
   }
 }

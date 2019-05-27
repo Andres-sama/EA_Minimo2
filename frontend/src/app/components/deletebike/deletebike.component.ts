@@ -36,7 +36,7 @@ export class DeletebikeComponent implements OnInit {
   }
   deleteBike(bikeId: string){    
     this.stationService.deleteBike(this.stations._id, bikeId).subscribe(res =>{
-      console.log("station a eliminar   " +this.stations._id +"bike que elimino" +bikeId);
+      console.log("station a eliminar  " +this.stations._id +"bike que elimino" +bikeId);
       console.log(res);
     })
   }

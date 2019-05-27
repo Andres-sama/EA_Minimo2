@@ -14,11 +14,13 @@ app.use(bodyParser.json())
 app.use(cors())
 //configurar el modo plantilla
 //le decimos a la app que en nuestra ruta /api utilize el modulo api
+
+
 app.use('/api', api)
 app.use(logger('dev'))
 app.use(express.static(path.join(__dirname, 'public')))
 app.use((req, res, next) =>{
-    res.header("Access-Control-Allow-Origin","http://localhost:4200");
+    res.header("Access-Control-Allow-Origin","http://localhost:3000","http://localhost:8100");
     res.header(
         "Access-Control-Allow-Headers",
         "Origin, X-Requested-With, Content-Type, Accept, Authorization"

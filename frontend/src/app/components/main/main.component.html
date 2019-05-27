@@ -1,17 +1,12 @@
-<ion-header>
-  <ion-title>Menu principal</ion-title>
-</ion-header>
+<div class="card">
+<div class="item item-body">
+<img class="card-img" img id="background"
+src="https://i.ytimg.com/vi/8sbOqm_a7qQ/maxresdefault.jpg" class=" img-responsive ">
+</div>
 <div class="card bg-dark text-black">
-  <img class="card-img" src="https://t1.ev.ltmcdn.com/es/posts/5/8/0/ventajas_y_desventajas_de_la_energia_eolica_1085_600.jpg" alt="Card image">
   <div class="card-img-overlay">
-    <h2 class="card-title"> Main Page </h2>
-       <p>
-         <button class="btn btn-primary btn-block" [routerLink]="['stationslist']"
-         ><i class="fa fa-eye"></i>&nbsp;List all the stations</button>
-       </p>
-       <p>
-        <button class="btn btn-primary btn-block" [routerLink]="['bikesList']"
-        ><i class="fa fa-eye"></i>&nbsp;List all the bikes</button>
-      </p>
+    <ion-button color="success" size="large" [routerLink]="['stationslist']">List all the stations</ion-button>
+    <!--<ion-button color="primary" size="large" [routerLink]="['bikesList']">List all the bikes</ion-button>-->
   </div>
+</div>
 </div>

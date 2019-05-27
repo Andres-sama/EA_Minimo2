@@ -18,13 +18,37 @@ declare var M: any
   bikes: Bikes[];
   bikes2: Bikes[];
   bikeID: string;
+  items : Bikes[];
+  itemsok : Bikes[];
   constructor(private BikesService: BikesService, private router: Router) {
+    this.initializeItems();
    }
-
+   initializeItems(){
+    this.getBikes()
+    this.items = this.bikes;
+    this.itemsok = this.items;
+   }
   ngOnInit() {
     this.getBikes()
-    this.getBikesnot();
+    this.getBikesnot()
   }
+
+  list(evt:any) {
+    this.initializeItems();
+    console.log("lista de bikes " + this.bikes)
+    console.log("lista de items " + this.items)
+    console.log("lista de itemsok " + this.itemsok)
+    
+    let val = evt.target.value;
+  
+    if (val && val.trim() != '') {
+      this.itemsok = this.itemsok.filter((item) => {
+        return (item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+    }
+  }
+
+
   getBikes() {
     this.BikesService.getBikes().subscribe(res =>{
         this.bikes = res;
